@@ -1,0 +1,20 @@
+{
+    "/cats": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/cats": "/cats"
+        }
+    },
+    "/asset": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/asset": "/asset"
+        }
+    }
+}
