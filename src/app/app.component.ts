@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
         this.http.get('/cats', {
             params: {
                 name: '王闯',
-                password: '123456',
+                password: Math.random() + '',
                 number: '12345',
                 email: 'pt_liangyue@outlook.com',
                 cats: 'true',
@@ -30,7 +30,19 @@ export class AppComponent implements OnInit {
         });
     }
 
-    postCats(): void {
+    getCatsDetail(): void {
+        this.http.get(`/cats/detail/${Math.round(Math.random() * 1000)}`, {
+            params: {
+                email: 'pt_liangyue@outlook.com',
+                cats: 'true',
+                numberString: '12346',
+            },
+        }).subscribe(data => {
+            console.log(data);
+        });
+    }
+
+    postCatsSteam(): void {
         this.http.post('/cats/steam', {
             name: '王闯',
             password: '123456',
